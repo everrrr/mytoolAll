@@ -1,0 +1,41 @@
+html, body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#main-box{
+	margin: 20px 0 0 20px;
+	
+	
+	
+	#tab{
+		position: relative;
+		height: 200px;
+		width: 300px;
+		margin-top: 5px;
+		border: 1px solid #000000;
+		overflow: scroll;
+		
+		table{
+			position: absolute;//使table脱离文档流，但要将此处的table包在一个div中，防止影响布局
+			
+			tr td{
+				border: 1px solid #000000;
+			}
+		}
+	}
+}
+
+
+
+
+
+//控制模块显隐
+.show {
+  visibility: visible;
+  z-index: 999;
+}
+
+.hide {
+  visibility: hidden;
+}

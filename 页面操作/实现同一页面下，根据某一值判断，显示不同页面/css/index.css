@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+#main-box {
+  margin: 20px 0 0 20px;
+}
+#main-box #tab {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  margin-top: 5px;
+  border: 1px solid #000000;
+  overflow: scroll;
+}
+#main-box #tab table {
+  position: absolute;
+}
+#main-box #tab table tr td {
+  border: 1px solid #000000;
+}
+.show {
+  visibility: visible;
+  z-index: 999;
+}
+.hide {
+  visibility: hidden;
+}
