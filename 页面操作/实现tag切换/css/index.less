@@ -1,0 +1,77 @@
+.main-box{
+	width: 600px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.tag-box{
+	position: relative;
+	
+	table{
+		position: absolute;
+		table-layout: fixed;//属性用来显示表格单元格、行、列的算法规则
+							//automatic默认，列宽度由单元格内容设定。
+							//列宽度由表格宽度和列宽度设定
+							//规定应该从父元素继承table-layout属性的值
+
+        width: 100%;
+        text-align: center;
+		th,tr td{
+			border: 1px solid #dddddd;
+			height: 32px;
+					
+			//常规列标题背景灰色
+			//$在这里表示父选择符，这里代表“tr td”
+			&:nth-of-type(odd) {
+			  background-color: rgba(0, 0, 0, 0.03);
+			}
+		}		
+	}	 
+}
+
+.tag-nav{
+	
+	
+	.header {
+	
+	      height: 5%;
+	      display: flex;
+	      align-items: center;
+	      border-radius: 0px 4px 4px 0px;
+	
+	      li {
+	        padding: 10px 0px;
+	        flex: 1;//flex=1表示几个子元素均分一个父元素空间
+	        text-align: center;
+	        cursor: pointer;
+	
+	        //width: 240px;
+	        //height: 36px;
+	        // opacity: 1;
+	        background: #ffffff;
+	        border: 1px solid #dddddd;
+	
+	      }
+		  
+		  .active {
+		          // width: 540px;
+		          // height: 36px;
+		          opacity: 1;
+		          background: #e6f7ff;
+		          border: 1px solid #5cc1ff;
+		          // border-radius: 4px 0px 0px 4px;
+		          font-weight: 400;
+		          // text-align: center;
+		          color: #1890ff;
+		        }
+	}
+}
+
+
+.hide{
+	display: none;
+	z-index: 999;
+}
+
+

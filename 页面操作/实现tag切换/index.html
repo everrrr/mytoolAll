@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../public/css/reset.css"/>
+		<link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+		<div class="main-box">
+			<div class="tag-nav">
+				<ur class="header" id="tag">
+					<li class="active">tag1</li>
+					<li>tag2</li>
+					<li>tag3</li>
+				</ur>
+			</div>
+			
+			<div class="tag-box tag1">
+				<table>
+					<th colspan="4">tag1</th>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>3</td>
+					</tr>
+					
+					<tr>
+						<td>11</td>
+						<td>22</td>
+						<td>33</td>
+						<td>3</td>
+					</tr>
+					
+					<tr>
+						<td>111</td>
+						<td>222</td>
+						<td>333</td>
+						<td>3</td>
+					</tr>
+					
+				</table>
+			</div>
+			
+			<div class="tag-box tag2 hide">
+				<!-- 上面的hide要给 display:none，
+					因为，我们下面用到的是jq里的hide()和show(),他们通过操作display实现显隐性
+				 -->
+				<table >
+					<th colspan="4">tag2</th>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>3</td>
+					</tr>
+					
+					<tr>
+						<td>11</td>
+						<td>22</td>
+						<td>3</td>
+						<td>33</td>
+					</tr>
+					
+					<tr>
+						<td>111</td>
+						<td>222</td>
+						<td>3</td>
+						<td>333</td>
+					</tr>
+					
+				</table>
+			</div>
+			
+			<div class="tag-box tag3 hide">
+				<table >
+					<th colspan="4">tag2</th>
+					<tr>
+						<td>1</td>
+						<td>3</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					
+					<tr>
+						<td>11</td>
+						<td>3</td>
+						<td>22</td>
+						<td>33</td>
+					</tr>
+					
+					<tr>
+						<td>111</td>
+						<td>3</td>
+						<td>222</td>
+						<td>333</td>
+					</tr>
+					
+				</table>
+			</div>
+			
+
+		</div>
+		<script src="../../public/js/jquery-1.10.1.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

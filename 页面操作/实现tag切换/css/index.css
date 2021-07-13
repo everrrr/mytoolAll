@@ -1,0 +1,49 @@
+.main-box {
+  width: 600px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.tag-box {
+  position: relative;
+}
+.tag-box table {
+  position: absolute;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+.tag-box table th,
+.tag-box table tr td {
+  border: 1px solid #dddddd;
+  height: 32px;
+}
+.tag-box table th:nth-of-type(odd),
+.tag-box table tr td:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.tag-nav .header {
+  height: 5%;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 4px 4px 0px;
+}
+.tag-nav .header li {
+  padding: 10px 0px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+}
+.tag-nav .header .active {
+  opacity: 1;
+  background: #e6f7ff;
+  border: 1px solid #5cc1ff;
+  font-weight: 400;
+  color: #1890ff;
+}
+.hide {
+  display: none;
+  z-index: 999;
+}
