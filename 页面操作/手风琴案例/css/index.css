@@ -1,0 +1,75 @@
+.menu-box {
+  display: flex;
+  width: 200px;
+  height: 500px;
+  flex-direction: column;
+}
+.menu-box .menu {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: #393D49;
+  color: #fff;
+}
+.menu-box .menu li {
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+  /* .menu-active{
+				 background-color: #955666;
+			 } */
+}
+.menu-box .menu li span {
+  line-height: 50px;
+  cursor: pointer;
+  padding: 0 15px;
+  display: block;
+  color: #fff;
+  background: rgba(47, 64, 86);
+}
+.menu-box .menu li dl {
+  display: none;
+}
+.menu-box .menu li dl dd a {
+  width: 100%;
+  line-height: 50px;
+  padding: 0 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s;
+}
+.menu-box .menu li dl dd:hover a {
+  color: #fff;
+  transition: all 0.3s;
+}
+.menu-box .menu li dl dd.active {
+  background: #009688;
+}
+.menu-box .menu li dl.active {
+  display: block;
+}
+/**
+  * 定义分割线样式
+  */
+.box {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line {
+  height: 1px;
+  flex-grow: 1;
+  background-color: #eaeaea;
+}
+.text {
+  color: #989898;
+  font-size: 14px;
+  margin: 0 8px;
+}

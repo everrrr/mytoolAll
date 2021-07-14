@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/demo.css">
+    <title>table使用</title>
+</head>
+<body>
+    <div class="main">
+    	<div class="tag-title">
+    		<ul class="tag-title-item">
+    			<li class="active">tag1</li>
+    			<li>tag2</li>
+    			<li>tag3</li>
+    		</ul>
+    	</div>
+    	<div class="tag-content">
+    		<div class="content content1 active">content1</div>
+    		<div class="content content2">content2</div>
+    		<div class="content content3">content3</div>
+    	</div>
+    </div>
+   
+    
+    
+    <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+    <script>
+    	$('.tag-title-item li').on('click', function(){
+    		$(this).addClass("active").siblings().removeClass('active')
+    		$(this).parent().parent().siblings('.tag-content').find('.content').eq($(this).index()).addClass('active').siblings().removeClass('active')
+    	})
+    </script>
+</body>
+</html>

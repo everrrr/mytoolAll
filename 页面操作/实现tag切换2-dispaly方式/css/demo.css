@@ -1,0 +1,51 @@
+.main{
+	width: 300px;
+	height: 300px;
+}
+
+
+.main .tag-title ul{
+	height: 5%;
+	display: flex;
+	align-items: center;
+	border-radius: 0px 4px 4px 0px;
+	
+
+}
+
+.main .tag-title ul li {
+	padding: 10px 0px;
+	flex: 1;
+	list-style: none;
+	text-align: center;
+	cursor: pointer;
+	background: #ffffff;
+	border: 1px solid #dddddd;
+	
+}
+
+.main .tag-title ul .active{
+	opacity: 1;
+	background: #e6f7ff;
+	border: 1px solid #5cc1ff;
+	font-weight: 400;
+	color: #1890ff;
+}
+
+.main .tag-content{
+	margin-left: 45px;
+}
+
+.main .tag-content .content1,
+.main .tag-content .content2,
+.main .tag-content .content3{
+	display: none;
+	
+}
+
+.main .tag-content .active{
+	display: block;
+}
+
+
+
