@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#container{
+				width: 500px; 
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=3923542f96357868ac5def66fdce7a71"></script> 
+		<script src="../../plugins/jquery/jquery.min.js"></script>
+		<script type="text/javascript">
+			var map = new AMap.Map('container', {
+				resizeEnable: true,
+				zoom: 11,//初始化地图层级
+				//center: [115.65645, 34.414775],//初始化地图中心点
+				//pitch: 85,//地图俯仰角度，有效范围0度到83度
+				//viewMode: '3D',
+				layers: [//只显示默认图层的时候，layers可以缺省
+					new AMap.TileLayer(),//高德默认标准图层
+					// new AMap.TileLayer.Satellite(),//卫星图层
+					// new AMap.TileLayer.RoadNet(),//路网图层
+					// new AMap.TileLayer.Traffic(),//实时交通图层
+					//new AMap.Buildings(),//楼块图层
+					new AMap.Buildings(),//室内地图
+				],
+				lang: 'zh_en'//语言，可以选值，en, zh_en, zh_cn
+			})
+			
+			var marker = new AMap.Marker({//新建标记点
+				position: new AMap.LngLat(116.39,39.9),
+				title: '北京'
+			})
+			
+			var marker1 = new AMap.Marker({//新建标记点
+				position: new AMap.LngLat(119.39,39.9),
+				title: '北京'
+			})
+			//将创建的点标记添加到已有的地图实例：
+			map.add([marker, marker1])
+			
+		</script>
+		
+	</body>
+</html>

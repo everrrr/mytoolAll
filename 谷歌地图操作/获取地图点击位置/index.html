@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#container{
+				width: 500px; 
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=3923542f96357868ac5def66fdce7a71"></script> 
+		<script src="../../plugins/jquery/jquery.min.js"></script>
+		<script type="text/javascript">
+			var map = new AMap.Map('container', {
+				resizeEnable: true,
+				zoom: 11,//初始化地图层级
+				//center: [115.65645, 34.414775],//初始化地图中心点
+				//pitch: 85,//地图俯仰角度，有效范围0度到83度
+				//viewMode: '3D',
+				layers: [//只显示默认图层的时候，layers可以缺省
+					new AMap.TileLayer(),//高德默认标准图层
+					// new AMap.TileLayer.Satellite(),//卫星图层
+					// new AMap.TileLayer.RoadNet(),//路网图层
+					// new AMap.TileLayer.Traffic(),//实时交通图层
+					//new AMap.Buildings(),//楼块图层
+					new AMap.Buildings(),//室内地图
+				],
+				lang: 'zh_en'//语言，可以选值，en, zh_en, zh_cn
+			})
+			var mapSize = map.getSize();//获取地图大小，返回的是地图容器的像素大小
+			var width = mapSize.width;
+			var height = mapSize.height;
+			console.log(`width：${width}`)
+			console.log(`height：${height}`)
+			
+			var marker = new AMap.Marker({
+				position: [116.405467, 39.907761],
+			    icon: new AMap.Icon({            
+			        size: new AMap.Size(40, 50),  //图标的大小
+			        image: "https://webapi.amap.com/theme/v1.3/images/newpc/way_btn2.png",
+			        imageOffset: new AMap.Pixel(0, -60)
+			    })        
+			});
+			  map.add(marker)
+			
+		</script>
+		
+	</body>
+</html>
