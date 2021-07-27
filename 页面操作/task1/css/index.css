@@ -1,0 +1,83 @@
+.main-box {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-box .tag-nav {
+  height: 40px;
+}
+.main-box .tag-nav .header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 4px 4px 0px;
+}
+.main-box .tag-nav .header li {
+  height: 40px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  line-height: 40px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+}
+.main-box .tag-nav .header .active {
+  opacity: 1;
+  background: #e6f7ff;
+  border: 1px solid #5cc1ff;
+  font-weight: 400;
+  color: #1890ff;
+}
+.main-box .tag-box {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  margin-top: 1px;
+}
+.main-box .tag-box .tab-item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.main-box .tag-box .tab-item .tab {
+  width: 50%;
+  height: 42px;
+  border: 1px solid #dddddd;
+}
+.main-box .tag-box .tab-item .tab .text-item {
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  width: 80%;
+  padding-left: 5px;
+  border: none;
+}
+.main-box .tag-box .tab-item .tab .delete {
+  color: blue;
+  cursor: pointer;
+}
+.main-box .tag-box .option-box {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+}
+.main-box .tag-box .option-box .add,
+.main-box .tag-box .option-box .ensure {
+  width: 50%;
+  cursor: pointer;
+}
+.main-box .tag-box .option-box .ensure {
+  text-align: right;
+}
+.main-box .hide {
+  display: none;
+  z-index: 999;
+}
+.blue-font {
+  color: #1890ff;
+}

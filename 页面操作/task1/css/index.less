@@ -1,0 +1,123 @@
+.main-box{
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+
+
+.tag-nav{
+	height: 40px;
+	
+	.header {
+	      height: 40px;
+	      display: flex;
+	      align-items: center;
+	      border-radius: 0px 4px 4px 0px;
+	
+	      li {
+	        height: 40px;
+	        flex: 1;//flex=1表示几个子元素均分一个父元素空间
+	        text-align: center;
+	        cursor: pointer;
+			line-height: 40px;
+	
+	        //width: 240px;
+	        //height: 36px;
+	        // opacity: 1;
+	        background: #ffffff;
+	        border: 1px solid #dddddd;
+	
+	      }
+		  
+		  .active {
+		          // width: 540px;
+		          // height: 36px;
+		          opacity: 1;
+		          background: #e6f7ff;
+		          border: 1px solid #5cc1ff;
+		          // border-radius: 4px 0px 0px 4px;
+		          font-weight: 400;
+		          // text-align: center;
+		          color: #1890ff;
+		        }
+	}
+}
+
+
+
+
+	.tag-box{
+		width: 100%;
+		height: calc(~"100% - 40px");
+		display: flex;
+		flex-direction: column;
+		margin-top: 1px;
+
+		.tab-item{
+			width: 100%;
+			
+			display: flex;
+			flex-wrap: wrap;
+			align-content: flex-start;
+			
+			.tab{
+				width: 50%;
+				height: 42px;
+				border: 1px solid #dddddd;
+			
+				
+				.text-item{
+					height: 40px;
+					line-height: 40px;
+					display: inline-block;
+					
+					width: 80%;
+					
+					padding-left: 5px;
+					
+					border: none;
+					
+				}
+				
+				.delete{
+					
+					color: blue;
+					cursor: pointer;
+				}
+				
+			}
+		}
+		
+		.option-box{
+			width: 100%;
+			padding-top: 10px;
+			display: flex;
+			
+			.add,.ensure{
+				width: 50%;
+				cursor: pointer;
+			}
+			
+			.ensure{
+				text-align: right;
+			}
+		}
+		 
+	}
+
+
+	.hide{
+		display: none;
+		z-index: 999;
+	}
+
+}
+
+
+.blue-font{
+	color: #1890ff;
+}
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>table模块快速使用</title>
+		<link rel="stylesheet" href="../../modules/layui/css/layui.css">
+		<style>
+			.button-btn {
+				height: 25px;
+				//padding: 0 18px;
+				width: 64px;
+				text-align: center;
+				background-color: rgba(230, 247, 255, 1);
+				border-radius: 2px;
+				border: 1px solid rgba(92, 193, 255, 1);
+				cursor: pointer;
+				color: #1890FF; //定义按钮字体颜色
+			}
+		</style>
+	</head>
+	<body>
+
+		<table id="demo" lay-filter="test"></table>
+
+		<script type="text/html" id="operate">
+			<button type="button" class="button-btn" lay-event="detail">详情</button>
+		</script>
+		<script src="../../modules/layui/layui.js"></script>
+
+		<script>
+			var $ = layui.jquery,
+				table = layui.table,
+				layer = layui.layer
+			var cols = [{
+				field: 'id',
+				title: 'ID',
+				width: 80,
+				sort: true,
+
+			}, {
+				field: 'username',
+				title: '用户名',
+				width: 80,
+			}, {
+				field: 'sex',
+				title: '性别',
+				width: 80,
+			}, {
+				field: 'city',
+				title: '用户名',
+				width: 80,
+			}, {
+				field: 'username',
+				title: '城市',
+				width: 80,
+			}, {
+				field: 'classify',
+				title: '职业',
+				width: 80,
+			}, {
+				align: "center",
+				field: 'lock',
+				title: '操作',
+				width: 100,
+				templet: '#operate',
+				fixed: 'right',
+
+			}]
+
+
+			var table = layui.table;
+
+			//第一个实例
+			table.render({
+				elem: '#demo',
+				height: 312,
+				width: 600,
+				url: '../../public/json/table.json' //数据接口
+					,
+				page: true //开启分页
+					,
+				cols: [cols]
+			});
+
+			//监听工具栏事件
+			table.on('tool(test)', function(obj) {
+				let data = obj.data
+				let event = obj.event
+				
+				layer.alert(JSON.stringify(data))
+
+				// if (event === 'detail') {
+				// 	layer.open({
+				// 		type: 0, //0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+				// 		title: "详情",
+				// 		btn: 0, //按钮
+				// 		area: ['400px', '300px'], //窗体尺寸
+				// 		shade: 0.5, //蒙版透明度
+				// 		content: $(".layer-box"), //内容
+				// 		moveType: 1, //拖拽模式，0或者1
+				// 		btnAlign: 'r', //按钮布局：l，c，r
+				// 		shadeClose: false, //是否点击遮罩关闭
+				// 		resize: false, // 是否允许拉伸
+
+				// 		success: function(layero, index) {
+				// 			layer.msg(JSON.stringify(data))
+				// 		}
+				// 	});
+
+				// }
+			})
+		</script>
+	</body>
+</html>

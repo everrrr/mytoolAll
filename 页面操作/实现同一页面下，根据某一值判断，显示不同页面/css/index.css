@@ -2,6 +2,7 @@ html,
 body {
   margin: 0px;
   padding: 0px;
+  border-width: 0;
 }
 #main-box {
   margin: 20px 0 0 20px;
