@@ -1,0 +1,24 @@
+.layer_tab {
+  width: 100%;
+  padding: 10px;
+}
+.layer_tab .layui-tab .layui-tab-title {
+  border-width: 0;
+}
+.layer_tab .layui-tab .layui-tab-title li {
+  width: 33.3%;
+  opacity: 1;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+}
+.layer_tab .layui-tab .layui-tab-title .layui-this {
+  opacity: 1;
+  background: #e6f7ff;
+  border: 1px solid #5cc1ff;
+  border-radius: 4px 4px 4px 4px;
+  color: #1890ff;
+}
+.layer_tab .layui-tab .layui-tab-title .layui-this:after {
+  border-style: none;
+  height: 40px;
+}
