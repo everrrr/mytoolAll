@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 500px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+
+		</div>
+
+		<script src="../../plugins/echarts/echarts.js"></script>
+		<script type="text/javascript">
+			var chartDom = document.querySelector("#container")
+			const chart = echarts.init(chartDom)
+			let option = {
+				title: {
+					text: '标题',
+					link: 'https://www.baidu.com',
+					subtext: '副标题',
+					left: "center",
+					top: "top",
+					textStyle: {
+						color: '#aaa',
+					},
+					textAlign: "left",
+					textVerticalAlign: "top",
+				},
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [{
+					data: [150, 230, 224, 218, 135, 147, 260],
+					type: 'line'
+				}]
+			};
+			chart.setOption(option)
+		</script>
+	</body>
+</html>
