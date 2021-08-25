@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+	</body>
+	
+	
+	<script src="../../plugins/zTree_v3/js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript">
+		//获得当年第一天第一秒到最后一天最后一秒
+		getYearDate()
+		function getYearDate(){
+			let nowTime = new Date()//获得当前日期对象
+			let year = nowTime.getFullYear()//获得当前所在年份
+			let month = nowTime.getMonth() + 1//获得当前所在月份
+			let day = nowTime.getDate() //获得当天在当月中的日期号
+			if(day<10){
+				day = `0${day}`
+			}
+			if(month<10){
+				month = `0${month}`
+			}
+			
+			let strYear =  `${year}-01-01 00:00:00,${year}-12-31 23:59:59`//当年范围
+			let strDay = `${year}-${month}-${day} 00:00:00,${year}-${month}-${day} 23:59:59`//当日范围
+			console.log(strYear)
+			console.log(strDay)
+			
+			//当月判断
+			let LastDay = new Date(year,month,0).getDate()//获得当月的最后以添
+			let strMonth =  `${year}-${month}-01 00:00:00,${year}-${month}-${LastDay} 23:59:59`//当日范围
+			console.log(strMonth)
+			
+			
+			num1 = Number('-50%'.split('%')[0])
+			console.log(num1)
+		}
+	</script>
+</html>

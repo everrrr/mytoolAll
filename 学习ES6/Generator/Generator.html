@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button class="my_btn" style="width: 50px; height: 30px;">btn1</button>
+		<button class="my_btn_1" style="width: 50px; height: 30px;">btn2</button>
+		<script type="text/javascript">
+			function* helloWorldGenerator(){
+				yield 'hello'
+				yield 'world'
+				yield 'ending'
+			}
+			
+			var hw = helloWorldGenerator()
+			console.log(hw)
+			var my_btn = document.querySelector('.my_btn')
+			console.log(my_btn)
+			my_btn.onclick = function(){
+				console.log(hw.next())
+			}
+			//输出
+			//{value: "hello", done: false}//第一次调用hw.next() 第一个yield
+			//{value: "world", done: false}//第二次调用hw.next() 第二个yield
+			//{value: "ending", done: false}//第三次调用hw.next() 
+			//{value: "undefined", done: false}//再次调用，输出undefined
+				
+				
+				
+			//在遇到return之前  输出中的 done为false
+			//遇到return以及之后再返回的值 ，done为true
+			function* helloWorldGenerator1(){
+				yield 'hello'
+				yield 'world'
+				yield 'lalala'
+				return 'ending'
+			}
+			var hw1 = helloWorldGenerator1()
+			console.log(hw1)
+			var my_btn_1 = document.querySelector('.my_btn_1')
+			my_btn_1.onclick = () => {
+				let i = 10
+				while(i--){
+					console.log(hw1.next())
+				}
+			}
+			/* 第一次调用，Generator 函数开始执行，直到遇到第一个yield表达式为止。next方法返回一个对象，
+					它的value属性就是当前yield表达式的值hello，done属性的值false，表示遍历还没有结束。
+			第二次调用，Generator 函数从上次yield表达式停下的地方，一直执行到下一个yield表达式。
+					next方法返回的对象的value属性就是当前yield表达式的值world，done属性的值false，表示遍历还没有结束。
+			第三次调用，Generator 函数从上次yield表达式停下的地方，一直执行到return语句（如果没有return语句，
+					就执行到函数结束）。next方法返回的对象的value属性，就是紧跟在return语句后面的表达式的值
+					（如果没有return语句，则value属性的值为undefined），done属性的值true，表示遍历已经结束。
+			第四次调用，此时 Generator 函数已经运行完毕，next方法返回对象的value属性为undefined，
+					done属性为true。以后再调用next方法，返回的都是这个值。 */
+		</script>
+	</body>
+</html>
