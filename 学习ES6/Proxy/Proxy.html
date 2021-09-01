@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var pipe = function (value) {
+			  var funcStack = [];
+			  var oproxy = new Proxy({} , {
+			    get: function(pipeObject, fnName) {
+			      if (fnName === 'get') {
+			        return funcStack.reduce(function (val, fn) {
+			          return fn(val);
+			        },value);//这里value为5，reduce会先取value的值作为初始值
+			      }
+				  console.log(pipeObject)
+				  console.log(fnName)
+			      funcStack.push(window[fnName]);
+				  //console.log(funcStack)
+			      return oproxy;
+			    }
+			  });
+			
+			  return oproxy;
+			}
+			
+			var double = n => n * 2;
+			var pow    = n => n * n;
+			var reverseInt = n => n.toString().split("").reverse().join("") | 0;
+			
+			var temp = pipe(3).double.pow.reverseInt.get; // 63
+			console.log(temp)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<router-link to="/user/foo">user</router-link>
+			</div>
+			<router-view></router-view>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
+		<script type="text/javascript">
+			const User = {
+				template: '<div>{{$route.params.id}}</div>'
+			}
+			const User1 = {
+				template: '<div>111</div>'
+			}
+
+
+			const routes = [
+				{
+					path: '/',
+					name: 'Home',
+					redirect: '/home'
+				},
+				{
+					path: '/home',
+					component: User1
+				},
+				{
+					path: '/user/:id',
+					component: User
+				},
+			]
+
+			const router = new VueRouter({
+				routes
+			})
+
+
+
+			const vm = new Vue({
+				el: '#app',
+				router
+			})
+		</script>
+	</body>
+</html>

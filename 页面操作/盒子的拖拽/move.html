@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#tuo{
+				width: 200px;
+				height: 600px;
+				background-color: #0086B3;
+				position: absolute;
+			}
+			#top{
+				height: 100px;
+				width: 100%;
+				background-color: #177DDC;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="tuo">
+			<div id="top">
+				
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			class Drag {
+			    //构造函数
+			    constructor(el1, el2) {
+					//拖拽el1即top使整个盒子 el2即tuo都移动
+					
+			        this.el1 = el1
+					this.el2 = el2
+			        //鼠标摁下时的元素位置
+			        this.startOffset = {};
+			        //鼠标摁下时的鼠标位置
+			        this.startPoint = {};
+	
+					
+			        let move = (e) => {
+			            this.move(e);
+			        };
+			        let end = (e) => {
+			            document.removeEventListener("mousemove", move);
+			            document.removeEventListener("mouseup", end);
+			        };
+			        el1.addEventListener("mousedown", (e) => {
+						
+			            this.start(e);
+			            document.addEventListener("mousemove", move);
+			            document.addEventListener("mouseup", end);
+			        })
+			    }
+				
+				/* 
+				 clientX：当鼠标事件发生时（不管是onclick，还是omousemove，onmouseover等），鼠标相对于浏览器（这里说的是浏览器的有效区域）x轴的位置；
+				 clientY：当鼠标事件发生时，鼠标相对于浏览器（这里说的是浏览器的有效区域）y轴的位置；
+				 screenX：当鼠标事件发生时，鼠标相对于显示器屏幕x轴的位置；
+				 screenY：当鼠标事件发生时，鼠标相对于显示器屏幕y轴的位置；
+				 offsetX：当鼠标事件发生时，鼠标相对于事件源x轴的位置
+				 offsetY：当鼠标事件发生时，鼠标相对于事件源y轴的位置
+				*/
+			    //摁下时的处理函数
+			    start(e) {
+					
+					console.log(2)
+			        let { el1, el2 } = this;
+			        this.startOffset = {
+						//开始时，整个模块右上角相对于其外部模块(这里是页面)右上角的横纵距离
+			            x: el2.offsetLeft,
+			            y: el2.offsetTop
+			        }
+					console.log(this.startOffset)
+			        this.startPoint = {
+						//刚点击时，鼠标相对于页面右上角的横纵距离
+			            x: e.clientX,
+			            y: e.clientY
+			        }
+			    }
+			    //鼠标移动时的处理函数
+			    move(e) {
+			        let { el1, el2, startOffset, startPoint } = this;
+					// console.log(startOffset)
+					// console.log(startPoint)
+			        let newPoint = {
+			            x: e.clientX,
+			            y: e.clientY
+			        }
+			        let dis = {
+			            x: newPoint.x - startPoint.x,
+			            y: newPoint.y - startPoint.y,
+			        }
+					console.log(111)
+			        el2.style.left = dis.x + startOffset.x + "px";
+			        el2.style.top = dis.y + startOffset.y + "px";
+			    }
+			}
+			
+			(function () {
+			    
+				let box1 = document.querySelector("#top");
+				let box2 = document.querySelector("#tuo");
+			    let dragbox = new Drag(box1, box2);
+			})()
+	
+		</script>
+	</body>
+</html>

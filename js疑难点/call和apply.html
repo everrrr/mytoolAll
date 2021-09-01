@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			/* call和apply都是Function对象的原型上定义的方法，它的作用是调用当前函数并且可以
+				通过call和apply来改变当前函数中this的指向
+			 */
+			
+			let fn0 = function fn1(){
+				this.x = 'myx'
+				this.y = 'myy'
+			}()
+			
+			function fn2(x, y){
+				console.log(this.x)
+				console.log(this.y)
+				console.log(x + y)
+			}
+			
+			fn2.call(fn0, 5, 6)
+			fn2.apply(fn0, [100, 51])
+	
+		</script>
+	</body>
+</html>

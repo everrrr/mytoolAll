@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="app">
+			
+		</div>
+		<script src="../js/vue.js"></script>
+		<script type="text/javascript">
+			
+			//定义组件
+			const NotFound = { template:'<p>Page not found</p>' }
+			const Home = { template: '<p>home page</p>'}
+			const About = { template: '<p>about page</p>'}
+			const vueRouter1 = { template: 'my page</p>'}
+			//定义路由
+			const routes = {
+				'/' : Home,
+				'/about' : About,
+				'/vueRouter1': vueRouter1
+			}
+			
+			
+			//vue函数
+			const vm = new Vue({
+				el : '#app',
+				data: {
+					currentRoute: window.location.pathname
+				},
+				//计算属性
+				computed: {
+					ViewComponent (){
+						console.log(this.currentRoute)
+						console.log(routes[this.currentRoute])
+						
+						return routes[this.currentRoute] || NotFound
+					}
+				},
+				render (h) {
+					console.log(h(this.ViewComponent))
+					console.log(this)
+					return h(this.ViewComponent)
+				}
+			})
+		
+		</script>
+	</body>
+</html>

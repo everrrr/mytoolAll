@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function createArray(...elements) {
+			  let handler = {
+			    get: function(target, propKey, receiver) {
+					console.log(target)
+					console.log(propKey)
+					console.log(receiver)
+			      let index = Number(propKey);
+			      if (index < 0) {
+			        propKey = String(target.length + index);
+			      }
+			
+			      return Reflect.get(target, propKey);
+			    }
+			  };
+			
+			  let target = [];
+			  target.push(...elements);
+			  return new Proxy(target, handler);
+			}
+			
+			let arr = createArray('a', 'b', 'c');
+			var temp = arr[-1] // c
+			console.log(temp)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Hello</h1>
+			<p>
+				<router-link to="/foo">Go to Foo</router-link>
+				<router-link to="/bar">Go to Bar</router-link>
+			</p>
+			
+			<router-view></router-view>
+		</div>
+		
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
+		<script>
+			const Foo = { template: '<div>foo</div>'}
+			const Bar = { template: '<div>bar</div>'}
+			
+			const routes = [
+				{ path: '/foo', component: Foo},
+				{ path: '/bar', component: Bar}
+				
+			]
+			
+			const router = new VueRouter({
+				routes//缩写，相当于routes：routes
+			})
+			
+			const app = new Vue({
+				router
+			}).$mount('#app')
+			/* $mount
+				如果Vue实例在实例化时没有收到el选项，那么它就处在了"未挂载"状态，此时没有关联的DOM元素，
+				而vm.$mount()可以手动的挂在一个未挂载的实例
+			 */
+		</script>
+	</body>
+</html>

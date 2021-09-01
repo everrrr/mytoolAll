@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+		<script>
+			let gen = function* idMaker(){
+				let index = 0
+				while(true){
+					yield index++
+				}
+			}()
+			
+			let i =30
+			while(i--){
+				let gennext = gen.next()
+				console.log(gennext)
+				console.log(gennext.value)
+			}
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<router-link to="/user/foo">user</router-link>
+				<router-link to="/user1/bar">user1</router-link>
+			</div>
+			<router-view></router-view>
+		</div>
+		
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
+		<script type="text/javascript">
+			
+			const User = {
+				template: '<div>User</div>'
+			}
+			
+		
+			/* 一个“路径参数”使用冒号：标记。当匹配到一个路由时，参数值会被设置到this.$router.params上，
+			 可以在每个组件内使用。于是，我们可以更新User的模板，输出当前用户的ID：
+			 */
+			/* 
+				当一个路径参数“使用冒号：”标记的时候，当匹配到一个路由时，参数值会被设置到this.$router.params,
+				可以在每个组件内使用。
+			 */
+			const User1 = {
+				template: '<div>{{$route.params.id}}</div>'
+			}
+			
+			const routes = [
+					{ path: '/user/:id', component: User},
+					/* 上面定义的动态路径参数
+						形如/user/foo , /user/bar 都会映射到相同的路由上
+					 */
+					{ path: '/user1/:id', component: User1}
+				]
+			
+			const router = new VueRouter({
+				routes
+			})
+			
+			
+			
+			const vm = new Vue({
+				router
+			}).$mount('#app')
+			
+		</script>
+	</body>
+</html>
