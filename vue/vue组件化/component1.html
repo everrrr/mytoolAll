@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="components-demo">
+			<button-counter></button-counter>
+			<button-counter></button-counter>
+		</div>
+		<div id="my1">
+			<button-counter></button-counter>
+		</div>
+
+
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
+		<script type="text/javascript">
+			//定义一个名为button-counter的新组件
+			//组件的注册类型分为全局注册和局部注册
+			//下面通过Vue.component全局注册一个组件
+			Vue.component('button-counter', {
+				data: function() {
+					/* 
+						组件中的data必须是函数，而不能是对象，，
+						一个组件的data选项必须是一个函数，这样每个实例可以维护一份被返回对象
+						的独立拷贝
+					 */
+					return {
+						count: 0
+					}
+				},
+				template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+			})
+
+			new Vue({
+				el: '#components-demo',
+
+			})
+			new Vue({
+				el: '#my1',
+				data: function() {
+					return {
+						count: 0
+					}
+				},
+
+			})
+		</script>
+	</body>
+</html>
