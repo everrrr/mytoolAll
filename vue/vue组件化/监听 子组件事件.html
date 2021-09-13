@@ -7,7 +7,7 @@
 	<body>
 		<div id="blog-post-events-demo">
 			<div :style="{fontSize: postFontSize + 'em'}">
-				<my-post v-for="post in posts" v-bind:key='post.id' v-bind:post='post' @enlarge-text="postFontSize += 0.1"></my-post>
+				<my-post v-for="post in posts" v-bind:key='post.id' v-bind:post='post' @elarg-text="postFontSize += 0.1"></my-post>
 
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 				template: `
 					<div class="blog-post">
 					      <h3>{{ post.title }}</h3>
-					      <button @click="$emit('enlarge-text')">
+					      <button @click="$emit('elarg-text')">
 					        Enlarge text
 					      </button>
 					      <div v-html="post.content"></div>
