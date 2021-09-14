@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<div id="blog-post-events-demo">
+			<div :style="{fontSize: postFontSize + 'em'}">
+				<my-post v-for="post in posts" :key="post.id" :post="post" @enlarge-text="onEnlargeText">
+				</my-post>
+			</div>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-router.js"></script>
+		<script type="text/javascript">
+			/* 
+				
+			 */
+		</script>
+	</body>
+</html>
